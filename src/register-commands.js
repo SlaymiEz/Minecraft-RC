@@ -9,26 +9,30 @@ const commands = [
         description: 'Replies with hey!',
     },
     {
-        name: 'add',
-        description: 'Adds two numbers',
-        options: [
-            {
-                name: 'first-number',
-                description: 'First number',
-                type: ApplicationCommandOptionType.Number,
-                required: true,
-            },
-            {
-                name: 'second-number',
-                description: 'Second number',
-                type: ApplicationCommandOptionType.Number,
-                required: true,
-            },
-        ]
-    },
-    {
         name: 'ping',
         description: 'Sends a ping command through the WebSocket',
+    },
+    {
+        name: 'socket',
+        description: 'Handles the connection between the bot and the mod',
+        options: [
+            {
+                name: 'action',
+                description: 'The action',
+                type: ApplicationCommandOptionType.String,
+                choices: [
+                    {
+                        name: 'connect',
+                        value: 'connect',
+                    },
+                    {
+                        name: 'disconnect',
+                        value: 'disconnect',
+                    },
+                ],
+                required: true,
+            }
+        ]
     },
 ];
 
